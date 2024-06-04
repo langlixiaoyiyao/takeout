@@ -21,6 +21,7 @@ const apis = {
     shopInfo: '/shop_info', // 获取商家信息
     shopRatings: '/shop_ratings', //获取商家评价数组
     shopGoods: '/shop_goods', //获取商家商品数组
+    updateUser: '/update_userinfo',
 };
 
 
@@ -40,6 +41,7 @@ instance.interceptors.response.use(function(response) {
     }
     return response.data;
 }, function(error) {
+    Api.msgHandler(error);
     return Promise.reject(error);
 });
 

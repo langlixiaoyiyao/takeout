@@ -15,9 +15,7 @@ export default {
     actions: {
         async getUserInfo(context, customConfig) {
             console.log(context);
-            const res = await Api.userinfo.get({
-                id: context.state.userInfo.data._id || ''
-            }, {}, customConfig);
+            const res = await Api.userinfo.get({}, {}, customConfig);
             let obj = {
             }
             if (res.code === 0) {

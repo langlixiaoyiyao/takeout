@@ -65,7 +65,7 @@
 <script>
 import HeaderTop from "@/components/HeaderTop.vue";
 import Api from "@/common/api";
-import { mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   computed: {
     ...mapState({
@@ -93,6 +93,7 @@ export default {
         });
       }
     },
+    ...mapActions(['getUserInfo']),
   },
   mounted() {
     this.init();
