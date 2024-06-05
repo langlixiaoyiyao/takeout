@@ -77,11 +77,11 @@ export default {
   },
   methods: {
     async init() {
-      if (!(this.$store.state.login.userInfo.data?._id)) {
+      // if (!(this.$store.state.login.userInfo.data?._id)) {
         await this.$store.dispatch("getUserInfo", {
           pass: true,
         });
-      }
+      // }
       this.$store.dispatch("delayUpdatePageState");
     },
     async logout() {
