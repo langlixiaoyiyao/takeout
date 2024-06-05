@@ -33,9 +33,7 @@ export default {
     submit: Utils.debounce(async function () {
       const res = await Api.updateUser.post({
         name: this.name,
-        _id: this.userInfo.data._id,
       });
-      console.log("res", res);
       if (res.code === 0) {
         this.updateUserInfo({
           data: { ...this.userInfo.data, name: this.name },
